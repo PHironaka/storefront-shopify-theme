@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
-import { About, Title, Copy, Landing } from './item.css';
-import { Link } from 'gatsby';
+import { Title, Copy, Landing } from './p1.css';
 
 const Item = ({ title, copy, image }) => (
-  <About>
   <Landing>
     <Img fluid={image ? image.childImageSharp.fluid : {}} alt={title} />
     <figcaption>
@@ -14,8 +12,6 @@ const Item = ({ title, copy, image }) => (
     </figcaption>
 
   </Landing>
-  <Link to="/about">Learn More About Us </Link>
-  </About>
 );
 
 Item.propTypes = {

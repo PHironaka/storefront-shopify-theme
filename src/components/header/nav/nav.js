@@ -18,7 +18,7 @@ const Nav = () => (
       </li>
 
       <li>
-        <Link to="/blog">Cart</Link>
+        <Link to="/blog">Cart (0)</Link>
       </li>
 
 

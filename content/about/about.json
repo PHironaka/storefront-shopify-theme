@@ -2,18 +2,8 @@
   "title": "About",
   "content": "content.md",
   "gallery": [{
-    "title": "React Context",
-    "copy": "For global styles.",
+    "title": "KOA IS A UNIQUE COMBINATION OF GRASSROOTS NATURE AND MODERN SCIENCE.",
+    "copy": "We design our products to help men meet the daily challenges of urban life, but our products and ingredients are inspired by the lush fertile nature of Hawaii.",
     "image": "../images/gallery/react-context.jpg"
-  },
-  {
-    "title": "Page Transitions",
-    "copy": "Component-based for easy usage.",
-    "image": "../images/gallery/page-transitions.jpg"
-  },
-  {
-    "title": "Intersection Observer",
-    "copy": "Including a polyfill for Safari.",
-    "image": "../images/gallery/intersection-observer.jpg"
   }]
 }

@@ -2,37 +2,32 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Layout from 'components/layout';
 import Box from 'components/box';
-import IOExample from 'components/io-example';
-import Modal from 'containers/modal';
 import Img from 'gatsby-image';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
+import Gallery from 'components/gallery';
+import Hero from 'components/hero';
 
 const Index = ({ data }) => (
   <Layout>
+    <Hero items={data.homeJson.gallery} />
     <Box>
-      <Modal>
-        <video
-          src="https://i.imgur.com/gzFqNSW.mp4"
-          playsInline
-          loop
-          autoPlay
-          muted
-        />
-      </Modal>
+  
       <h2>Direct To You, Affordable From Nature</h2>
+      <h4>Shop our Essentials Kit</h4>
       
        <div className="index-items">
         {data.allShopifyProduct.edges.map(({ node }) => (
           <div  key={node.id}>
 <Img fluid={node.images[0].localFile.childImageSharp.fluid}/>
-            <h3>
+           <Link to={`/products/${node.handle}`}><h3>
               {node.title}
-            </h3>
+            </h3></Link>
 
 
           </div>
         ))}
       </div>
+     <Gallery items={data.aboutJson.gallery} />
 
       <div className="ig-intro"> 
       <p> Follow Along </p>
@@ -52,7 +47,6 @@ const Index = ({ data }) => (
 
     </Box>
 
-    <IOExample />
   </Layout>
 );
 
@@ -89,6 +83,48 @@ export const query = graphql`
       }
     }
   }
+
+    aboutJson {
+      title
+      content {
+        childMarkdownRemark {
+          html
+        }
+      }
+      gallery {
+        title
+        copy
+        image {
+          childImageSharp {
+            fluid(maxHeight: 500, quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+      }
+
+        homeJson {
+      title
+      content {
+        childMarkdownRemark {
+          html
+        }
+      }
+     gallery {
+        title
+        copy
+        image {
+          childImageSharp {
+            fluid(maxHeight: 500, quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+
+ 
+ }
 
   
   allInstaNode (limit: 5){

@@ -4,9 +4,29 @@ import MEDIA from 'helpers/mediaTemplates';
 export const Container = styled.div`
   padding: 2rem 4rem;
 
+  h2,h4 {
+    text-align:center;
+    text-transform:uppercase;
+  }
+
+  h2 {
+    font-size:1.1em;
+    font-weight:bold;
+    margin:15px 0;
+  }
+
+  h4 {
+    font-size:.7em;
+    letter-spacing:2px;
+  }
+
   .products {
   	display:grid;
   	grid-template-columns: 1fr 1fr;
+        ${MEDIA.TABLET`
+  display: block;
+    
+  `};
 
   }
 
@@ -28,6 +48,19 @@ export const Container = styled.div`
   	 display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 3rem;
+  margin-top:2em;
+
+  a {
+    text-align:center;
+    font-weight:bold;
+    text-transform:uppercase;
+    font-size:.8em;
+
+    h3 {
+    margin-top:3em;
+
+    }
+  }
 
   p {
   	margin-top:1em;
@@ -53,6 +86,7 @@ export const Container = styled.div`
   	 display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 4rem;
+  margin-bottom:4em;
 
    div {
 
