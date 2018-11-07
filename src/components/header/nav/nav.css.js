@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import MEDIA from 'helpers/mediaTemplates';
 
 export const Container = styled.nav`
   ul {
@@ -15,4 +16,11 @@ export const Container = styled.nav`
       }
     }
   }
+
+    ${MEDIA.TABLET`
+  display: none;
+    
+  `};
+
+
 `;

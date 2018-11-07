@@ -1,26 +1,22 @@
 import React from "react"
-import { graphql } from "gatsby"
 import Layout from "components/layout"
+import Box from 'components/box';
+import PropTypes from 'prop-types';
 
-export default ({ data }) => {
-  const post = data.markdownRemark
-  return (
-    <Layout>
+
+const Blog = ({ pageContext: { article } }) => (
+  <Layout>
+  <Box>
       <div>
-        <h1>{post.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <h1>{article.title}</h1>
+      <div dangerouslySetInnerHTML={{ __html: article.contentHtml }} />
       </div>
+      </Box>
     </Layout>
-  )
-}
+);
 
-export const query = graphql`
-  query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      frontmatter {
-        title
-      }
-    }
-  }
-`
+Blog.propTypes = {
+  pageContext: PropTypes.object.isRequired,
+};
+
+export default Blog;

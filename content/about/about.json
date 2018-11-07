@@ -5,5 +5,17 @@
     "title": "KOA IS A UNIQUE COMBINATION OF GRASSROOTS NATURE AND MODERN SCIENCE.",
     "copy": "We design our products to help men meet the daily challenges of urban life, but our products and ingredients are inspired by the lush fertile nature of Hawaii.",
     "image": "../images/gallery/react-context.jpg"
+  }],
+  "balance": [{
+    "title": "OUR  METHOD",
+    "copy": "Our supreme mission is to help you fl ourish in a demanding modern world. This means never being passive, and constantly adapting to shifting challenges of the day.",
+    "image": "../images/gallery/react-context.jpg"
+  }],
+  "challenge": [{
+    "title": "START SMALL START TODAY",
+    "copy": "Our skin refl ects how we treat ourselves and how we treat ourselves shapes our future. So start treating yourself better today. Move forward gradually, but purposefully. The way nature intended.",
+    "image": "../images/gallery/react-context.jpg"
+
   }]
+
 }

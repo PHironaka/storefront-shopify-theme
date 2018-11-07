@@ -5,16 +5,14 @@ import Layout from 'components/layout';
 import Box from 'components/box';
 import Head from 'components/head';
 import AboutHero from 'components/about-hero';
+import Balance from 'components/about-balance';
 const About = ({ data }) => (
   <Layout>
     <Head pageTitle={data.aboutJson.title} />
     <Box>
-     <AboutHero items={data.aboutJson.gallery} />
-      <div
-        dangerouslySetInnerHTML={{
-          __html: data.aboutJson.content.childMarkdownRemark.html,
-        }}
-      />
+     <AboutHero items={data.aboutJson.challenge} />
+     <Balance items={data.aboutJson.balance} />
+
     </Box>
   </Layout>
 );
@@ -34,7 +32,19 @@ export const query = graphql`
           html
         }
       }
-      gallery {
+      challenge {
+        title
+        copy
+        image {
+          childImageSharp {
+            fluid(maxHeight: 500, quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+
+      balance {
         title
         copy
         image {
@@ -46,6 +56,9 @@ export const query = graphql`
         }
       }
     }
+
+    
+
   }
 
 `;

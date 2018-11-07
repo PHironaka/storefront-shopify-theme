@@ -15,7 +15,6 @@ const Header = () => (
     <button type="submit" className="search-button" >
       <span className="icon-fallback-text">Submit</span>
       </button>
-    
     </Email>
 
     </Mailing>

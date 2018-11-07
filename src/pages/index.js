@@ -9,6 +9,7 @@ import Hero from 'components/hero';
 
 const Index = ({ data }) => (
   <Layout>
+  
     <Hero items={data.homeJson.gallery} />
     <Box>
   
@@ -46,7 +47,6 @@ const Index = ({ data }) => (
 
 
     </Box>
-
   </Layout>
 );
 

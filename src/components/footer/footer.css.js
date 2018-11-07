@@ -2,6 +2,14 @@ import styled from 'styled-components';
 import MEDIA from 'helpers/mediaTemplates';
 
 export const Mailing = styled.div`
+max-width:350px;
+justify-self:right;
+  ${MEDIA.TABLET`
+justify-self:center;
+
+
+  `};
+
 h3 {
 font-size:.6em;
 text-transform:uppercase;
@@ -32,7 +40,7 @@ export const Email = styled.form`
   }
 
   input {
-    min-width:250px;
+    max-width:200px;
   }
 
   button {
@@ -133,7 +141,8 @@ grid-gap: 6em;
     }
   }
      ${MEDIA.TABLET`
-  display: block;
+ grid-template-columns: 1fr ;
+justify-items:center;
 
   `};
 

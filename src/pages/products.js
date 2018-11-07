@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Layout from 'components/layout';
 import Box from 'components/box';
 import Img from 'gatsby-image';
-import { graphql } from 'gatsby';
+import { Link,graphql } from 'gatsby';
 
 const Products = ({ data }) => (
   <Layout>
@@ -11,10 +11,12 @@ const Products = ({ data }) => (
         {data.allShopifyProduct.edges.map(({ node }) => (
           <div className="products"  key={node.id}>
 			<Img fluid={node.images[0].localFile.childImageSharp.fluid}/>
-          <div key={node.id}>
-            <h3>
+          <div className="products-content" key={node.id}>
+          <h3> <Link to={`/products/${node.handle}`}>
+           
               {node.title}
-            </h3>
+            
+            </Link></h3>
 
            <p> {node.description} </p>
  </div>

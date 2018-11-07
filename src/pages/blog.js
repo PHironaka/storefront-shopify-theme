@@ -10,8 +10,10 @@ const Blog = ({ data }) => (
 <div className="index-items">
         {data.allShopifyArticle.edges.map(({ node }) => (
           <div key={node.id}>
+
 <img src={node.image.src} alt={node.id} />
-           < p> {node.content} </p>
+           < h2> {node.title} </h2>
+           < p> {node.excerpt} </p>
 
 
           </div>
